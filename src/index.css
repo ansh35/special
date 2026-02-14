@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  background: linear-gradient(to bottom, #fff1f6, #ffe4ee);
+  color: #5b2b38;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* golden floating particles */
+
+.particle{
+  position:absolute;
+  border-radius:50%;
+  background: radial-gradient(circle, #fff4c2 0%, #ffd86b 40%, rgba(255,216,107,0.2) 70%, transparent 100%);
+  filter: blur(1px);
+  opacity:0.9;
+  animation: floatUp linear infinite;
+}
+
+/* smoother upward movement */
+
+@keyframes floatUp{
+  0%{
+    transform: translateY(40px) scale(0.8);
+    opacity:0;
+  }
+  10%{
+    opacity:1;
+  }
+  90%{
+    opacity:1;
+  }
+  100%{
+    transform: translateY(-120vh) scale(1.2);
+    opacity:0;
+  }
+}
+#root{
+  position:relative;
+  z-index:1;
+}
